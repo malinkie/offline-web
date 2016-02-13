@@ -1,0 +1,18 @@
+CACHE MANIFEST
+
+# v1
+
+CACHE:
+css/normalize.css
+css/skeleton.css
+search.js
+http://cdn.downdetector.com/static/uploads/c/300/ca3e1/wikipedia-logo_1.png
+
+# COMMENTS!
+
+NETWORK:
+*
+
+# space seperated fallback options for files while offline
+# FALLBACK:
+# *.jpg offline.jpg

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wikipedia Search</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+    
+  <script src="search.js">
+    //navigator.onLine - tells you if your browser is online
+    //navigator.connection - NetworkInformation API (mobile only) - we should use this
+    //performance api - ios has put it back
+    // offlinejs
+    // Application Cache - is being deprecated but still the most widespread support
+    // Service Workers - will deprecate application cache
+    // ft-datasquasher - reduce data saved in localStorage or application cache
+    //navigator.standalone - fullscreen or not
+    // <link rel="manifest" href="maifest.json"> file for android specific chrome install of webapp.
+    // sw-toolbox - a toolbox for service workers
+    // sw-precache - browser and nodejs toolbox for more cache control
+    // https://ifixit-pwa.appspot.com/ - eggsample
+    
+    /*
+     * we should log the network information as part of analytics. will give us more info regarding who is connecting
+     * Fetch API - look into but only supported in service worker supported browsers
+     */
+  </script>
+  
+  <script src="sw1.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="five columns" style="margin-top: 25%">
+        <img src="http://cdn.downdetector.com/static/uploads/c/300/ca3e1/wikipedia-logo_1.png">
+        <h4>Offline Wiki</h4>
+        <p><input type=search><input type="button" value="search" onclick="search()"></p>
+      </div>
+        <div class="seven columns" id="result" style="margin-top: 5%">
+        
+        </div>  
+    </div>
+  </div>
+    
+</body>
+</html>
