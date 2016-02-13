@@ -1,9 +1,9 @@
-var urls = ['css/normalize.css', 'css/skeleton.css', 'search.js'];
-    //cache = caches.open("myAppCache");
+var urls = ['css/normalize.css', 'css/skeleton.css', 'search.js'],
+    cache = caches.open("myAppCache");
 
 self.addEventListener("install", function(event) {
     console.log("The SW is now installed"); 
-    event.waitUntil(caches.open('myAppCache').then(function(cache) {
+    event.waitUntil(cache.then(function(cache) {
         return cache.addAll(urls);
     }));
 });
@@ -14,13 +14,11 @@ self.addEventListener('fetch', function(event) {
             .then(function(response) {
                 // Even if the response is in the cache, we fetch it
                 // and update the cache for future usage
-                debugger;
                 var fetchPromise = fetch(event.request).then(
                     function(networkResponse) {
-                        caches.open('myAppCache').then(
-                          function(cache){
-                            debugger;
-                            cache.put(event.request.url, networkResponse.clone());
+                        cache.then(
+                          function(_cache){
+                            _cache.put(event.request.url, networkResponse.clone());
                           }
                         );
                         return networkResponse;
